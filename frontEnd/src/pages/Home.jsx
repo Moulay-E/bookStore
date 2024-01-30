@@ -7,7 +7,7 @@ import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 
 const Home = () => {
-  const [books, setBooks] = useState([]);
+  const [book, setbook] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Home = () => {
     axios
       .get('http://localhost:5555/books')
       .then((response) => {
-        setBooks(response.data.data);
+        setbook(response.data.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className="p-4">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl my-8">Books List</h1>
+        <h1 className="text-3xl my-8">book List</h1>
         <Link to="/books/create">
           <MdOutlineAddBox className="text-sky-800 text-4xl " />
         </Link>
@@ -50,7 +50,7 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {books.map((book, index) => (
+            {book.map((book, index) => (
               <tr key={book._id} className="h-8">
                 <td className="border border-slate-700 rounded-md text-center ">
                   {index + 1}

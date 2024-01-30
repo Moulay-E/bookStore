@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import ShowBook from './pages/ShowBook';
-import CreateBook from './pages/CreateBook';
+import CreateBook from './pages/CreateBook.jsx';
 import EditBook from './pages/EditBook';
 import DeleteBook from './pages/DeleteBook';
 
