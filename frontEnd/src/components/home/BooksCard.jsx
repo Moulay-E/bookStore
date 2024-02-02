@@ -1,7 +1,13 @@
-import React from 'react';
+import BooksSingleCard from './BooksSingleCard';
 
-const BooksCard = () => {
-  return <div>BooksCard</div>;
+const BooksCard = ({ book }) => {
+  return (
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+      {book.map((item) => (
+        <BooksSingleCard key={item._id} book={item} />
+      ))}
+    </div>
+  );
 };
 
 export default BooksCard;
